@@ -27,23 +27,17 @@ function calcul(operateur, libelle, montant) {}
 // send form, add operation
 const formulaire = document.getElementById("ajoutOperation");
 formulaire.addEventListener("submit", function (e) {
-  e.preventDefault();
-  // on récupère les valeurs des champs du formulaire
-  let credit = document.querySelector('[valeur=credit]')
-  let debit = document.querySelector('[valeur=debit]')
-  let textForm = document.getElementById('intitule').textContent.value
-  let montant = document.getElementById('montant').textContent.value
-  console.table(credit);
-  console.table(debit);
-  console.table(textForm);
-  console.table(montant);
-  // on stocke ces valeurs dans un array[]
-  let arrayOperations = [credit,debit,textForm,montant]
-  // on ajoute cet array dans notre array global operationsCompte
-  operationsCompte += arrayOperations
-  console.table(operationsCompte);
-  // on execute la fonction pour actualiser
+    e.preventDefault();
+    // on récupère les valeurs des champs du formulaire
+    let result = document.getElementById('operation')
+    let textForm = document.getElementById('intitule').textContent.value
+    let montant = document.getElementById('montant').textContent.value
+    // on stocke ces valeurs dans un array[]
+    let arrayOperations = [credit,debit,textForm,montant]
+    // on ajoute cet array dans notre array global operationsCompte
+    operationsCompte += arrayOperations
+    // on execute la fonction pour actualiser
 
-  // on reset le formulaire
-  formulaire.reset();
+    // on reset le formulaire
+    formulaire.reset();
 });

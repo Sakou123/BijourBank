@@ -82,6 +82,14 @@ h4 {
   background-color: rgba(223, 179, 179, 0.8);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
+.percent-credit{              /* Rajout a jeter eventuellement */
+  font-size: 0.8rem;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(118, 214, 142, 0.8);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
 .column ul,
 .column li {
   list-style: none;
@@ -102,6 +110,10 @@ h4 {
 
 .credit {
   background-color: var(--colorGazoil);
+}
+
+#detailsCredit li {
+  height: 66.2px;
 }
 
 .debit {
@@ -137,4 +149,10 @@ button:hover {
 .wrapper {
   max-width: 1260px;
   margin: auto;
+}
+
+#total {
+  color: white;
+  font-size: 2.5rem;
+  height: 75.2px;
 }

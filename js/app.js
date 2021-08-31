@@ -25,18 +25,35 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// function validateForm() {
+//   var x = document.forms[""]["fname"].value;
+//   if (x == "") {
+//     alert("Name must be filled out");
+//     return false;
+//   }
+// }
+
 // send form, add operation
 const formulaire = document.getElementById("ajoutOperation");
 formulaire.addEventListener("submit", function (e) {
     e.preventDefault();
+    
     // on récupère les valeurs des champs du formulaire
     let operateur = document.getElementById('operation').value
     let libelle = document.getElementById('intitule').value
+    let montantbrut = document.getElementById('montant').value
     let montant = parseFloat(document.getElementById('montant').value)
     // on stocke ces valeurs dans un array[]
     let arrayOperations = [operateur,libelle,montant]
 
-    // on ajoute cet array dans notre array global operationsCompte
+    if (libelle=='') {
+      alert("Renseigner une opération!");
+      return false;
+    } if (montantbrut=='') {
+      alert("Renseigner un montant!");
+      return false;
+    } else {
+          // on ajoute cet array dans notre array global operationsCompte
     operationsCompte.push(arrayOperations);
 
     let creditTot = 0
@@ -89,5 +106,5 @@ formulaire.addEventListener("submit", function (e) {
 
     // on reset le formulaire
     formulaire.reset();
+    }
 });
-
